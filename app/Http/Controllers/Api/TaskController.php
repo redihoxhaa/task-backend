@@ -35,7 +35,11 @@ class TaskController extends Controller
         $task->user_id = $user->id;
         $task->category_id = $data['category_id'];
         $task->title = $data['title'];
-        $task->description = $data['description'];
+
+        if (isset($data['description'])) {
+            $task->description = $data['description'];
+        }
+
         $task->due_date = $data['due_date'];
         $task->status = $data['status'];
         $task->save();

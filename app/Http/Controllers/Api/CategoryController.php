@@ -35,8 +35,16 @@ class CategoryController extends Controller
         $category = new Category();
         $category->user_id = $user->id;
         $category->name = $data['name'];
-        $category->bg_color_hex = $data['bg_color_hex'];
-        $category->text_color_hex = $data['text_color_hex'];
+
+        if (isset($data['bg_color_hex'])) {
+            $category->bg_color_hex = $data['bg_color_hex'];
+        }
+
+
+        if (isset($data['text_color_hex'])) {
+            $category->text_color_hex = $data['text_color_hex'];
+        }
+
         $category->save();
 
         return response()->json($category, 201);
