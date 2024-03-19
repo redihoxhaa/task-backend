@@ -51,7 +51,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Funzione per mostrare una task specifica dell'utente loggato
      */
     public function show($id)
     {
@@ -70,7 +70,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Funzione per modificare una task specifica dell'utente loggato
      */
     public function update(UpdateTaskRequest $request, $id)
     {
@@ -83,7 +83,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Funzione per eliminare una task specifica dell'utente loggato
      */
     public function destroy($id)
     {

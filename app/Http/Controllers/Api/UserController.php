@@ -102,6 +102,7 @@ class UserController extends Controller
         }
     }
 
+    // Funzione che grazie al token di autorizzazione ci comunica i dati dello user
     public function getUser(Request $request)
     {
         return response()->json($request->user());
