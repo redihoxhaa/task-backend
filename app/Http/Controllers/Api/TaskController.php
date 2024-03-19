@@ -23,14 +23,6 @@ class TaskController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Funzione per salvare la task dell'utente attualmente loggato
      */
     public function store(StoreTaskRequest $request)
@@ -41,6 +33,7 @@ class TaskController extends Controller
         $user = User::find(Auth::id());
         $task = new Task();
         $task->user_id = $user->id;
+        $task->category_id = $data['category_id'];
         $task->title = $data['title'];
         $task->description = $data['description'];
         $task->due_date = $data['due_date'];
@@ -59,14 +52,6 @@ class TaskController extends Controller
         $task = $user->tasks()->findOrFail($id);
 
         return response()->json($task);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Task $task)
-    {
-        //
     }
 
     /**
