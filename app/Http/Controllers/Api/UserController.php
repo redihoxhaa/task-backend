@@ -101,4 +101,9 @@ class UserController extends Controller
             ], 500);
         }
     }
+
+    public function getUser(Request $request)
+    {
+        return response()->json($request->user());
+    }
 }
