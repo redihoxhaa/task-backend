@@ -24,7 +24,7 @@ class UpdateTaskRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'end_date' => 'required|date',
+            'due_date' => 'required|date',
             'status' => 'boolean'
         ];
     }

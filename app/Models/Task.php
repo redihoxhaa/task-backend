@@ -9,7 +9,7 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'end_date', 'status'];
+    protected $fillable = ['title', 'description', 'due_date', 'status'];
 
     public $timestamps = true;
 
