@@ -23,7 +23,8 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'color_hex' => 'required|string|max:7',
+            'bg_color_hex' => 'nullable|string|max:7',
+            'text_color_hex' => 'nullable|string|max:7',
         ];
     }
 }

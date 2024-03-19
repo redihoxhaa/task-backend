@@ -17,7 +17,7 @@ class TaskController extends Controller
     public function index()
     {
         $user = User::find(Auth::id());
-        $tasks = Task::where('user_id', $user->id)->get();
+        $tasks = Task::with('category')->where('user_id', $user->id)->get();
 
         return response()->json($tasks);
     }
@@ -49,7 +49,10 @@ class TaskController extends Controller
     public function show($id)
     {
         $user = User::find(Auth::id());
-        $task = $user->tasks()->findOrFail($id);
+
+
+        $task = Task::with('category')->where('user_id', $user->id)
+            ->findOrFail($id);
 
         return response()->json($task);
     }

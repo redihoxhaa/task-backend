@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'color_hex'];
+    protected $fillable = ['name', 'bg_color_hex', 'text_color_hex'];
 
     public $timestamps = true;
 
