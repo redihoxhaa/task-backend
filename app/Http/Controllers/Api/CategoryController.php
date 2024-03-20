@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         $user = User::find(Auth::id());
-        $categories = Category::where('user_id', $user->id)->get();
+        $categories = Category::where('user_id', $user->id)->orderBy('name')->get();
 
         return response()->json($categories);
     }
