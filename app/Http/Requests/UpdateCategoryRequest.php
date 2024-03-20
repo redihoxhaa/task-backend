@@ -23,8 +23,8 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'bg_color_hex' => 'nullable|string|max:7',
-            'text_color_hex' => 'nullable|string|max:7',
+            'bg_color_hex' => 'nullable|string|max:255',
+            'text_color_hex' => 'nullable|string|max:255',
         ];
     }
 }
